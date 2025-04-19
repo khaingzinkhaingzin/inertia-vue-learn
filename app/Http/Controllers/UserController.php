@@ -10,9 +10,7 @@ class UserController extends Controller
 {
     public function show(User $user)
     {
-        $user = [
-            'name'=> "Ktz"
-        ];
+        $user = $user->only(["name", "email", "email_verified_at"]);
         return Inertia::render('User/Show', ['user' => $user]);
     }
 }

@@ -1,5 +1,7 @@
 <template>
-    <h1>slot</h1>
+    <h1>{{ user.name }}</h1>
+    <p>{{ user.email }}</p>
+    <p>{{ varifiedAt(user.email_verified_at) }}</p>
 </template>
 
 <script setup>
@@ -8,6 +10,14 @@ defineOptions({ layout: Layout });
 defineProps({
     user: Object,
 });
+
+const varifiedAt = (date) => {
+    return new Date(date).toLocaleString("en-us", {
+        year: "numeric",
+        month: "numeric",
+        day: "numeric",
+    });
+};
 </script>
 
 <style></style>

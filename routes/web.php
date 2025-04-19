@@ -7,4 +7,4 @@ use App\Http\Controllers\UserController;
 //     return view('welcome');
 // });
 
-Route::get('/', [UserController::class, 'show']);
+Route::get('/user/{user}', [UserController::class, 'show']);
